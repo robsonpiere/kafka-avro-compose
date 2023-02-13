@@ -7,7 +7,8 @@
 
 ## Criar tópico
 ```bash
-docker-compose exec kafka kafka-topics --bootstrap-server localhost:9092 --create --if-not-exists --topic topico-teste --partitions=3
+docker-compose exec kafka kafka-topics --bootstrap-server localhost:9092 \
+--create --if-not-exists --topic topico-teste --partitions=3
 ```
 
 
