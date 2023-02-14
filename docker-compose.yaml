@@ -12,7 +12,7 @@ services:
             - zookeeper
         ports:
             - "9092:9092"
-      - "29092:29092"
+            - "29092:29092"
         environment:
             KAFKA_BROKER_ID: 1
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -26,7 +26,7 @@ services:
             - "8081:8081"
         depends_on:
             - zookeeper
-      - kafka
+            - kafka
         environment:
             SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:29092
             SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
@@ -39,7 +39,7 @@ services:
         image: confluentinc/cp-enterprise-control-center
         depends_on:
             - kafka
-      - schema-registry
+            - schema-registry
         ports:
             - "9021:9021"
         environment:
